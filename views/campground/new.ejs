@@ -1,0 +1,45 @@
+<% layout('/layouts/boilerplate.ejs') %>
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 my-5">
+                <h2 class="text-center">新增一個地點</h2>
+                <form action="/campgrounds" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">名稱(*)</label>
+                        <input type="text" class="form-control" id="title" name="campground[title]" required autofocus>
+                    </div>
+                    <div class="mb-3">
+                        <label for="location" class="form-label">地址(*)</label>
+                        <input type="text" class="form-control" id="location" name="campground[location]" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">價錢(*)</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">$</span>
+                            <input type="number" class="form-control" id="price" name="campground[price]" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFileMultiple" class="form-label">地點圖片</label>
+                        <input class="form-control" type="file" id="formFileMultiple" name="image" multiple>
+                        <div class="form-text">
+                            圖片大小限制5MB，僅支援jpeg/jpg/png，一次最多上傳3張
+                        </div>
+                    </div>
+                    <!-- <div class="mb-3">
+                    <label for="image" class="form-label">圖片</label>
+                    <input type="text" class="form-control" id="image" name="campground[image]" required>
+                </div> -->
+                    <div class="form-floating">
+                        <textarea class="form-control" id="description" name="campground[description]"
+                            required></textarea>
+                        <label for="description">描述(*)</label>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                    <button class="btn btn-success mt-3">新增</button>
+                    <a class="btn btn-secondary mt-3 ms-2" href="/campgrounds">返回</a>
+                </div>
+                </form>
+            </div>
+        </div>
+    </main>

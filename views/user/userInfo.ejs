@@ -1,0 +1,66 @@
+<% layout('/layouts/boilerplate.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/userInfo.css">
+    <link rel="stylesheet" href="/stylesheets/flashLoginAndRegister.css">
+    <main class="container need-mt">
+        <div class="row my-5">
+            <!-- Start: user-content -->
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <!-- Start: user-content-image -->
+                    <div class="user-pic px-3 pt-3">
+                        <!-- 沒有照片就用預設圖片 -->
+                        <% if(!user.image.url && !user.image.filename) { %>
+                            <img src="https://res.cloudinary.com/lunzaizailunzaizai/image/upload/v1630236792/my-side-project-1/user-default.png"
+                                alt="">
+                            <% } else { %>
+                                <img src="<%= user.image.url %>" alt="">
+                                <% } %>
+                                    <% if(userIsLoggedIn==user._id){ %>
+                                        <form class="update-user-image-form mt-3 p-2"
+                                            action="/campgrounds/user/<%= user._id %>" method="POST"
+                                            enctype="multipart/form-data">
+                                            <label for="formFileSm" class="mt-2 form-label">更換大頭貼</label>
+                                            <input class="form-control-sm" type="file" id="formFileSm" name="image">
+                                            <button class="btn btn-light btn-sm mt-2">確認</button>
+                                        </form>
+                                        <% } %>
+                                            <!-- End: user-content-image -->
+                    </div>
+                    <!-- Start: user-content-body -->
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= user.username %>
+                        </h5>
+                        <p class="card-text">
+                            <%= user.email %>
+                        </p>
+                    </div>
+                    <!-- End: user-content-body -->
+                </div>
+            </div>
+            <!-- End: user-content -->
+            <!-- Start: posts-content -->
+            <div class="col-md-9">
+                <div class="row">
+                    <% for(campground of campgrounds){ %>
+                        <div class="col-md-6 pb-3 posts-content">
+                            <div class="card w-100">
+                                <img src="<%= campground.image[0].url %>" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <%= campground.title %>
+                                    </p>
+                                    <div class="d-flex justify-content-end">
+                                        <a class="btn btn-light btn-sm view-btn"
+                                            href="/campgrounds/<%= campground._id %>"><i
+                                                class="fas fa-angle-double-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+            <!-- End: posts-content -->
+        </div>
+    </main>

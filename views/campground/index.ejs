@@ -1,0 +1,71 @@
+<% layout('/layouts/boilerplate.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/indexpage.css">
+    <!-- Start: Top carousel -->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active h-100" data-bs-interval="10000">
+                <img src="https://res.cloudinary.com/lunzaizailunzaizai/image/upload/v1630312123/my-side-project-1/photo-1519055548599-6d4d129508c4_su0y5e.jpg"
+                    class="d-block w-100" alt="...">
+                <div class="carousel-caption d-md-block">
+                    <h1>發現，美好角落</h1>
+                    <p>旅行者的共筆——共同分享私房景點，讓旅遊更有趣！</p>
+                </div>
+            </div>
+            <div class="carousel-item h-100" data-bs-interval="2000">
+                <img src="https://res.cloudinary.com/lunzaizailunzaizai/image/upload/v1630312105/my-side-project-1/xIsiRLngSRWN02yA2BbK_submission-photo-7.jpg_r9hhqs.jpg"
+                    class="d-block w-100" alt="...">
+                <div class="carousel-caption d-md-block">
+                    <h1>發現，美好角落</h1>
+                    <p>旅行者的共筆——共同分享私房景點，讓旅遊更有趣！</p>
+                </div>
+            </div>
+            <div class="carousel-item h-100">
+                <img src="https://res.cloudinary.com/lunzaizailunzaizai/image/upload/v1630312205/my-side-project-1/photo-1613018264526-88faa8dadbfc_lyflgw.jpg"
+                    class="d-block w-100" alt="...">
+                <div class="carousel-caption d-md-block">
+                    <h1>發現，美好角落</h1>
+                    <p>旅行者的共筆——共同分享私房景點，讓旅遊更有趣！</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+     <!-- End: Top carousel -->
+    <main class="container mt-2 mb-5">
+        <div class="row">
+            <!-- Start: Single Campground -->
+            <% for(let campground of campgrounds) { %>
+                <div class="col-md-4 campground-container">
+                    <div class="card my-3">
+                        <% if(campground.image.length > 0) {%> 
+                        <!-- 因為image是arr，所以要選arr中第幾個property -->
+                        <img src="<%= campground.image[0].url %>" class="card-img-top" alt="..." style="height:236px">
+                        <% } else { %>
+                            <img src="" class="card-img-top" alt="..." style="height:236px">
+                       <% } %>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= campground.title %>
+                            </h5>
+                            <p class="card-text" style="color:black"><%= campground.location %></p>
+                            <p class="card-text text-muted">
+                                @<%= campground.author.username %>
+                            </p>
+                            <div class="d-flex justify-content-end">
+                                <a href="/campgrounds/<%= campground._id %>" class="btn btn-light btn-sm view-btn"><i
+                                        class="fas fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+                <!-- End: Single Campground -->
+        </div>
+    </main>

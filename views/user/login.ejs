@@ -1,0 +1,30 @@
+<% layout('/layouts/boilerplate.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/flashLoginAndRegister.css">
+    <main class="container">
+        <div class="row need-mt">
+            <div class="col-md-6 offset-md-3 my-5">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <img src="https://images.unsplash.com/photo-1533850595620-7b1711221751?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1114&q=80"
+                            class="card-img-top shadow" alt="...">
+                        <h3 class="mt-3 card-title text-center">登入</h3>
+                        <form class="mb-3" action="/campgrounds/user/login" method="POST">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">用戶名稱(*)</label>
+                                <input type="text" class="form-control" id="username" name="user[username]" required autofocus>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">密碼(*)</label>
+                                <input type="password" class="form-control" id="password" name="user[password]"
+                                    required>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-success">登入</button>
+                                <a class="btn btn-secondary card-link ms-2" href="/campgrounds">返回</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>

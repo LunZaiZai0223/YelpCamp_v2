@@ -1,0 +1,27 @@
+.user-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.alert {
+    position: relative;
+    top: 56px;
+}
+
+.view-btn:hover {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+}
+
+.card {
+    box-shadow: 1px 1px 1px 0.5px rgba(0, 0, 0, 0.1);
+}
+
+.update-user-image-form {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}

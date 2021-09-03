@@ -1,0 +1,25 @@
+.alert{
+    position: relative;
+    top: 56px;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.need-mt {
+    margin-top: 4rem;
+}
+
+#alart-for-name-and-pwd {
+    top:0;
+    margin-bottom: 0;
+}
+
+#alart-for-name-and-pwd:nth-of-type(1) {
+    top:0;
+    margin-top: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-body img {
+    border-radius: 0.25rem;
+}

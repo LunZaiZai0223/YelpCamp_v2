@@ -1,0 +1,15 @@
+<!-- 第一次出現後successMessage就存在了，所以當沒訊息就會持續顯示 -->
+<!-- 限制如果successMessage有東西再出來 -->
+<% if(successMessage && successMessage.length) { %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= successMessage %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% } %>
+
+        <% if(errorMessage && errorMessage.length) { %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <%= errorMessage %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } %>

@@ -1,0 +1,46 @@
+.review-outer-container, .commit-writing-form {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+.alert {
+    position: relative;
+    top: 56px;
+}
+
+.need-mt {
+    margin-top: 1rem;
+}
+
+.btn-warning {
+    color: white;
+}
+
+.btn-danger:hover {
+    color: black;
+}
+
+.btn-info
+{
+    background-color: #f94144;
+    border-color: #f94144;
+    color: white;
+}
+
+.btn-info:hover
+{
+    background-color: #f94144;
+    border-color: #f94144;
+    color: black;
+}
+
+.btn-secondary:hover {
+    color: black;
+}
+
+#map {
+    border-radius: 0.25rem;
+    height: 150px;
+    width: 150px;
+}

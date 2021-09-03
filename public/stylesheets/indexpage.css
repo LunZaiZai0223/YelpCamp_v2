@@ -1,0 +1,30 @@
+/* .campground-container {
+    border: 1px solid red;
+} */
+
+.view-btn:hover {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+}
+
+.card {
+    box-shadow: 1px 1px 1px 0.5px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-caption {
+    position: absolute;
+    z-index: 100;
+    top: 40%;
+}
+
+.carousel-caption > h1, p{
+    color: white;
+}
+
+.alert{
+    position: relative;
+    top: 56px;
+    margin-bottom: 56px;
+}
+
