@@ -3,10 +3,6 @@
 ![](https://i.imgur.com/JdclwoO.jpg)
 此專案係完成Udemy課程「[The Web Developer Bootcamp 2021](https://www.udemy.com/course/the-web-developer-bootcamp/)」後運用課程中學習到的技術製作，使用full-stack開發+RESTful設定路由以及BootStrap5前端排版。
 <br>
-可以使用測試帳號試用網站，
-帳號: admin
-密碼: admin4
-<br>
 ## 功能
 - 使用者可以登入/註冊，註冊時支援會員上傳大頭貼
 - 新增/修改/刪除地點，新增及修改時支援圖片新增/刪除
@@ -14,6 +10,7 @@
 - 登入後可以留言，作者可以刪除自己的留言
 - 個人會員頁面，顯示username、email及發表過的地點
 - 在登入的狀態中，可更換會員大頭貼
+- 可使用測試帳號試用網站。帳號：admin 密碼：admin4
 ## Build With
 - MongoDB Database
 - RESTful, Express, Mongoose 寫路由及更新MongoDB資料
